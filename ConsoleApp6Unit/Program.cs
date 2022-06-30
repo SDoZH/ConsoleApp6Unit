@@ -2,78 +2,62 @@
 
 namespace ConsoleApp6Unit
 {
-	enum TurnDirection
+	class User
 	{
-		None = 0,
-		Left,
-		Right
-	}
+		private int age;
 
-	class Car
-	{
-		private double Fuel;
-
-		private int Mileage;
-
-		private string color;
-
-		private TurnDirection turn;
-
-		public Car()
+		public int Age
 		{
-			Fuel = 50;
-			Mileage = 0;
-			color = "White";
-		}
+			get
+			{
+				return age;
+			}
 
-		private void Move()
-		{
-			// Move a kilometer
-			Mileage++;
-			Fuel -= 0.5;
-		}
+			set
+			{
+				if (value < 18)
+				{
+					Console.WriteLine("Возраст должен быть не меньше 18");
+				}
+				else
+				{
+					age = value;
+				}
+			}
 
-		private void Turn(TurnDirection direction)
-		{
-			turn = direction;
 		}
-
-		public void FillTheCar()
-		{
-			Fuel = 50;
-		}
-
-		public string GetColor()
-		{
-			return color;
-		}
-
-		public void ChangeColor(string newColor)
-		{
-			if (color != newColor)
-				color = newColor;
-		}
-
-		public bool IsTurningLeft()
-		{
-			return turn == TurnDirection.Left;
-		}
-
-		public bool IsTurningRight()
-		{
-			return turn == TurnDirection.Right;
-		}
-	}
-	class TrafficLight
-    {
-		private void ChangeColor(string color)
+		private string login;
+		public string Login
         {
-			if (color != green)
-				color = red;
-		}
-		public string GetColor()
+			get
+			{ return login; }
+			set 
+			{ if (value.Length < 3) 
+				{
+					Console.WriteLine("Login должен быть больше 3х символов");
+			    }
+				else 
+				{ login = value; }
+			}
+        }
+
+		private string email;
+	     public string Email
         {
-			return color;
+			get { return email; }
+			set 
+			{
+                if (value.Contains('@'))
+                {
+					Console.WriteLine("Неверный формат адреса электронной почты");
+				}
+                else
+                {
+					email = value;
+                }
 		}
-	}
+        }
+            
+     }
+
 }
