@@ -2,62 +2,19 @@
 
 namespace ConsoleApp6Unit
 {
-	class User
+	class Obj
 	{
-		private int age;
+		private string name;
+		private string owner;
+		private int length;
+		private int count;
 
-		public int Age
+		public Obj(string name, string ownerName, int objLength, int count)
 		{
-			get
-			{
-				return age;
-			}
-
-			set
-			{
-				if (value < 18)
-				{
-					Console.WriteLine("Возраст должен быть не меньше 18");
-				}
-				else
-				{
-					age = value;
-				}
-			}
-
+			this.name = name;
+			owner = ownerName;
+			length = objLength;
+			this.count = count;
 		}
-		private string login;
-		public string Login
-        {
-			get
-			{ return login; }
-			set 
-			{ if (value.Length < 3) 
-				{
-					Console.WriteLine("Login должен быть больше 3х символов");
-			    }
-				else 
-				{ login = value; }
-			}
-        }
-
-		private string email;
-	     public string Email
-        {
-			get { return email; }
-			set 
-			{
-                if (value.Contains('@'))
-                {
-					Console.WriteLine("Неверный формат адреса электронной почты");
-				}
-                else
-                {
-					email = value;
-                }
-		}
-        }
-            
-     }
-
+	}
 }
