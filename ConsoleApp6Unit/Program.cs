@@ -2,22 +2,11 @@
 
 namespace ConsoleApp6Unit
 {
-    class Processor : ComputerPart
+   class Obj
     {
-        public override void Work() {}
+        public string Name;
+        public string Description;
+        public static int MaxValue = 2000;
     }
-    class MotherBoard : ComputerPart
-    {
-        public override void Work() { }
-    }
-    class GraphicCard : ComputerPart
-    {
-        public override void Work() { }
-    }
-    class ComputerPart
-    {
-        public abstract void Work();
-    }
-
 
 }
