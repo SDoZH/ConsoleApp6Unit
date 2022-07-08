@@ -2,32 +2,22 @@
 
 namespace ConsoleApp6Unit
 {
-    class BaseClass
+    class Processor : ComputerPart
     {
-        public virtual int Counter
-        {
-            get;
-            set;
-        }
+        public override void Work() {}
+    }
+    class MotherBoard : ComputerPart
+    {
+        public override void Work() { }
+    }
+    class GraphicCard : ComputerPart
+    {
+        public override void Work() { }
+    }
+    class ComputerPart
+    {
+        public abstract void Work();
     }
 
-    class DerivedClass : BaseClass
-    {
-        private int counter;
-        public override int Counter
-        {
-            get
-            {
-                return counter;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    Console.WriteLine("Число долнобытьбольше нуля");
-                    counter = value;
-                }
-            }
-        }
-    }
+
 }
