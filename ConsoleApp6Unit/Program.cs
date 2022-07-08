@@ -2,11 +2,14 @@
 
 namespace ConsoleApp6Unit
 {
-   class Obj
+   class Helper
     {
-        public string Name;
-        public string Description;
-        public static int MaxValue = 2000;
+        public static void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
     }
 
 }
